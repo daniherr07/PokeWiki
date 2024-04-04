@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/*#region Default*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+html, body { 
+  height: 100%; 
+}
+
+body{
+    background: rgb(51, 108, 231);
+}
+
+/*#endregion*/
+
+
+
+/*#region Loader*/
+
+.lds-ring {
+  min-height: 100%;
+  place-items: center;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+  
+.loadingdiv{
+  min-height: 100%;
+  place-items: center;
+}
+
+/*#endregion*/
+
+
+/*#region Search Bar*/
+
+::placeholder{
+  color: rgba(255, 255, 255, 0.486);
+  font-size: 24px;
+}
+
+input[type=text]{
+  display: flex;
+  color: white;
+  background-color: transparent;
+  width: 80%;
+  height: 50px;
+  font-size: 24px;
+  border-left: transparent;
+  border-right:transparent ;
+  border-top: transparent;
+  border-color:white;
+
+}
+
+:focus{
+  border-left: transparent;
+  border-right:transparent ;
+  border-top: transparent;
+  border-color:white ;
+  outline-width: 0;
+}
+
+.searchBar{
+  height: 200px;
+  display: grid;
+  place-items: center;
+}
+
+.fa-rotate-right{
+  color: white;
+}
+
+
+.reload{
+  display: inline-flex;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+
+.reload:hover{
+  cursor: pointer;
+}
+
+.reload p{
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+/*#endregion*/
+
+
+
+/*#region DataList*/
+
+datalist {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 0 0 5px 5px;
+  border-top: none;
+  font-family: sans-serif;
+  max-width: 80.1%;
+  min-width: 80.1%;
+  min-height: 200px;
+  max-height: 200px;;
+  padding: 5px;
+  margin-top: 160px;
+  overflow: auto;
+  z-index: 1;
+}
+
+option {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 4px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 1px;
+  font-size: 18px;
+  cursor: pointer;
+  display: block;
+}
+
+
+option:hover, .active{
+  background-color: lightblue;
+}
+
+/*#endregion*/
+
+
+/*#region Card1*/
+
+.card{
+  background: rgb(72,153,246);
+  background: linear-gradient(90deg, rgba(72, 153, 246, 0.973) 33%, rgba(91, 178, 250, 0.973) 100%);
+  width: 75%;
+  height: 90%;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 9px 9px 17px 10px rgba(11, 41, 107, 0.384);
+  opacity: 1;
+  visibility: hidden;
+  transition: all 300ms ease;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-close{
+  position: absolute;
+  bottom: 90%;
+  left: 90%;
+  background-color: rgba(255, 205, 68, 0.973);
+  padding: 20px;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.card-close:hover{
+  cursor: pointer;
+}
+
+.card-content{
+  width: 95%;
+  height: 85%;
+  position: absolute;
+  top: 11%;
+  left: 2.5%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "title title image"
+    "text text image"
+    "text text image"; 
+  padding: 30px;
+  gap: 30px;
+  
+}
+
+.card-title{
+  grid-area: title;
+  
+}
+
+.card-title p{
+  font-size: 50px;
+  background-color: rgba(255, 255, 255, 0.582);
+  padding: 30px;
+  border-radius:10px ;
+}
+
+.card-text{
+  grid-area: text;
+  font-size: 23px;
+  background-color: rgba(255, 255, 255, 0.582);
+  border-radius:10px;
+  padding: 30px;
+  padding-top: 25px;
+}
+
+.card-photo{
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.582);
+  border-radius:10px;
+
+}
+
+.card-photo img{
+  width: 300px;
+  
+}
+
+.type{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.type img{
+  width: 40px;
+}
+
+
+/*#endregion*/
+
+/*#region Card2*/
+
+.card{
+  background: rgb(72,153,246);
+  background: linear-gradient(90deg, rgba(72, 153, 246, 0.973) 33%, rgba(91, 178, 250, 0.973) 100%);
+  width: 75%;
+  height: 90%;
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  font-family: 'Lato', sans-serif;
+  box-shadow: 9px 9px 17px 10px rgba(11, 41, 107, 0.384);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms cubic-bezier(0.335, 0.010, 0.030, 1.360);
+
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.card-close{
+  position: absolute;
+  bottom: 90%;
+  left: 90%;
+  background-color: rgba(255, 205, 68, 0.973);
+  padding: 20px;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.card-close:hover{
+  cursor: pointer;
+}
+
+.card-content2{
+  width: 95%;
+  height: 85%;
+  position: absolute;
+  top: 11%;
+  left: 2.5%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Title Title Title"
+    "text text text"
+    "text text text";  
+  padding: 30px;
+  gap: 30px;
+  
+}
+
+.card-content2 .card-title{
+  grid-area: Title;
+  
+}
+
+.card-content2 .card-title p{
+  font-size: 50px;
+  background-color: rgba(255, 255, 255, 0.582);
+  padding: 30px;
+  border-radius:10px ;
+}
+
+.card-content2 .card-text{
+  grid-area: text;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.582);
+  border-radius:10px;
+  padding: 30px;
+  padding-top: 25px;
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr) ; 
+}
+
+.card-content2 .card-text img{
+  width: 33px;
+  height: 33px;
+}
+
+.card-content2 .card-text .pokeType {
+  display:flex;
+}
+
+.card-content2 .card-text .pokeType p {
+  margin-top: 5px;
+  margin-left: 3px;
+}
+
+
+
+/*#endregion*/
+
+/*#region Scroll Bar*/
+
+body::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.507);
+}
+
+body::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
+  display: none;
+} 
+
+body::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #b1b1b1;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+/*#endregion*/
+
+
+
+/*#region NavBar*/
+
+.navbg{
+  min-width: 100%;
+  height: 100px;
+  background-color: rgb(51, 108, 231);
+}
+
+.nav{
+  min-width: 100%;
+  height: 80px;
+  background-color: rgb(255, 205, 68);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: end;
+  border-radius: 0 0 9px 9px;
+}
+
+ul *{
+  padding: 10px 20px;
+  text-decoration: none;
+  list-style: none;
+  display: inline;
+  font-size: 20px;
+}
+
+ul{
+  margin-top: 30px;
+  font-family: 'Lato', sans-serif;
+}
+
+.nav img{
+  width: 150px;
+  margin-top: 7px;
+  margin-left: 10px;
+  display: block;
+}
+
+.nav ul a li{
+  color: black;
+  text-decoration: none;
+  width: auto;
+  background-color: rgb(255, 205, 68);
+  border-radius: 20px;
+  transition: ease-out 80ms;
+}
+
+.nav ul a li:hover{
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 20px;
+  transition: ease-in 80ms;
+}
+
+.nav ul a{
+  width: fit-content;
+}
+
+/*#endregion*/
+
+
+
+/*#region Main*/
+
+.main{
+  position: relative;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+  min-width: 100%;
+  height: 590px;
+}
+
+.pokemon-div{
+  display: grid;
+  place-items: center;  
+  background: rgb(72,153,246);
+  background: linear-gradient(90deg, rgba(72, 153, 246, 0.801) 33%, rgba(91, 178, 250, 0.801) 100%);
+  width: 275px;
+  height: 275px;
+  margin: 10px;
+  border-radius: 20px;   
+  box-shadow: 0;
+  transition: ease-out 200ms;
+}
+
+.pokemon-div:hover{
+  box-shadow: 9px 9px 17px 10px rgba(11, 41, 107, 0.384);
+  cursor: pointer;
+  transition: ease-in 200ms;
+}
+
+.pokeName {
+  font-size: 25px;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.329);
+  padding: 9px;
+  border-radius: 15px;
+}
+
+.pokeImg{
+  background-color: rgba(255, 255, 255, 0.329);
+  border-radius: 15px;
+}
+
+.pokeID{
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+  background-color: rgba(240, 248, 255, 0.226);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+/*#endregion*/
+
+
+
+/*#region Index*/
+
+.index{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: 225px;
+  font-family: 'Lato', sans-serif;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: lighter;
+}
+
+
+input[type=button], button{
+  width: auto;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  transition: ease-out 50ms;
+}
+
+input[type=button]:hover, button:hover{
+  cursor: pointer;
+  background-color: rgb(197, 197, 197);
+  transition: ease-in 50ms;
+}
+
+input[type=button]:active, button:active{
+  transform: scale(0.93);
+  transition: ease-in 10ms;
+}
+
+#next, #previous{
+  width: 80px;
+  height: 80px;
+}
+
+
+/*#endregion*/
+
+
+
+/*#region Footer*/
+
+.footer{
+  min-width: 100%;
+  height: 80px;
+  display: inline;
+  padding-bottom: 200px;
+}
+
+.footer ul p{
+  font-size: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.footer ul{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.footer ul li:nth-child(1){
+  text-align: start;
+  margin-left: 20px;
+}
+
+.footer ul li:nth-child(2){
+  text-align: end;
+  margin-right: 20px;
+}
+
+.footer a{
+  color: black;
+  text-decoration: none;
+}
+
+.footer a:hover{
+  color: rgb(56, 56, 56);
+}
+
+/*#endregion*/
+
+
+
+/*#region Others*/
+
+.padding{
+  min-width: 100%;
+  height: 30px;
+}
+
+/*#endregion*/
+
+
+
+/*#region Animations*/
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*#endregion*/
+
+
+
+/*#region Responsive*/
+
+/*
+@media screen and (min-width: 1024px){
+  
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  
+}
+
+@media screen and (max-width: 767px){
+  .main{
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    font-family: 'Lato', sans-serif;
+
+  }
+
+  .pokemon-div{
+   
+    width: 300px;
+    height: 300px;
+  }
+
+  .pokeName {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .pokeImg{
+    width: 150px;
+  }
+
+  .pokeID{
+    font-size: 15px;  
+  }
+
+  input{
+    font-size: 20px;
+  }
+
+  ::placeholder{
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+*/
+
+/*#endregion*/
+
+

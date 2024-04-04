@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/b01a920b52.js" crossorigin="anonymous"></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/nav.js"></script>
+    
+</head>
+<body>
+    <div class="card">
+        
+        <div class="card-content">
+            <div class="card-title"><p class="card-title-p"></p></div>
+            <div class="card-photo"><img class="card-photo-img" src=""></div>
+            <div class="card-text">
+                <p class="type"> Type: <img class="icon1" src="" alt=""> <img class="icon2" src="" alt=""> </p>
+                <p class="hp"></p>
+                <p class="atk"></p>
+                <p class="def"></p>
+                <p class="spec-atk"></p>
+                <p class="spec-def"></p>
+                <p class="speed"></p>
+                <br><br>
+                <p class="ability"></p>
+                <p class="hiddenAbility"></p>
+            </div>
+        </div>
+    
+        <div class="card-content2">
+            <div class="card-title"><p class="card-title-p">Pokemon Types</p></div>
+            <div class="card-text">
+                <div class="group1">
+                    <div class="pokeType">
+                        <img src="img/types/fire.ico" alt=""> <p>Fire</p> 
+                    </div>
+                     <br>
+
+                     <div class="pokeType">
+                        <img src="img/types/water.ico" alt=""> <p>Water</p> 
+                    </div>
+                    <br>
+
+                     <div class="pokeType">
+                        <img src="img/types/grass.ico" alt=""> <p>Grass</p> 
+                    </div>
+                    <br>
+
+                     <div class="pokeType">
+                        <img src="img/types/bug.ico" alt=""> <p>Bug</p> 
+                    </div>
+                    <br>
+
+                    <div class="pokeType">
+                        <img src="img/types/dark.ico" alt=""> <p>Dark</p> 
+                    </div>
+                    <br>
+
+                    <div class="pokeType">
+                        <img src="img/types/electric.ico" alt=""> <p>Electric</p> 
+                    </div>
+                    <br>
+                     
+                </div>
+    
+                <div class="group2">
+                     <div class="pokeType">
+                        <img src="img/types/fairy.ico" alt=""> <p>Fairy</p> 
+                    </div>
+                    <br>
+
+                     <div class="pokeType">
+                        <img src="img/types/fighting.ico" alt=""> <p>Fighting</p> 
+                    </div>
+                    <br>
+
+                    <div class="pokeType">
+                        <img src="img/types/flying.ico" alt=""> <p>Flying</p> 
+                    </div>
+                    <br>
+                     <div class="pokeType">
+                        <img src="img/types/ghost.ico" alt=""> <p>Ghost</p> 
+                    </div>
+                    <br>
+                    <div class="pokeType">
+                        <img src="img/types/ground.ico" alt=""> <p>Ground</p> 
+                    </div>
+    
+                     <br>
+                     <div class="pokeType">
+                        <img src="img/types/ice.ico" alt=""> <p>Ice</p> 
+                    </div> 
+                    <br>
+
+
+                </div>
+                <div class="group3">
+                    <div class="pokeType">
+                        <img src="img/types/normal.ico" alt=""> <p>Normal</p> 
+                    </div>
+                    <br>
+                     <div class="pokeType">
+                        <img src="img/types/poison.ico" alt=""> <p>Poison</p> 
+                    </div>
+                    <br>
+                     <div class="pokeType">
+                        <img src="img/types/rock.ico" alt=""> <p>Rock</p> 
+                    </div>   
+                    <br>
+                     <div class="pokeType">
+                        <img src="img/types/steel.ico" alt=""> <p>Steel</p> 
+                    </div>
+                    <br>   
+                    <div class="pokeType">
+                        <img src="img/types/dragon.ico" alt=""> <p>Dragon</p> 
+                    </div>
+                    <br>    
+                    <div class="pokeType">
+                        <img src="img/types/psychic.ico" alt=""> <p>Psychic</p> 
+                    </div>
+                    <br>      
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="card-close" onclick="hideCard()"><i class="fa-solid fa-xmark fa-1x"></i></div>
+    </div>
+
+    <div class="navbg" id="navbg">
+        <div class="nav">
+            <a href="index.html"><img class="logoImg" src="img/logo.png" alt=""></a>
+
+            <ul>
+                <a href="#" onclick="showCardTypes()"><li>Pokemon Types</li></a>
+                <a href="#searchBar" ><li>Search</li></a>
+                <a href="#hero"><li>Home</li></a>
+            </ul>
+    </div>
+    </div>
+
+    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+    <div class="searchBar" id="searchBar">
+        <input type="text" id="searchInput" list="" placeholder="Search for Pokemon" autocomplete="off">
+        <datalist id="options">
+
+
+               
+        </datalist>
+        <div class="reload" onclick="reload()">
+            <i class="fa-solid fa-rotate-right fa-2x" id="restart"></i> <p>Reload</p>
+        </div>
+        <template>
+            <option value="" onclick="optionSearch(event)" id="template"></option>
+        </template> 
+        
+    </div>
+
+    <div class="main" id="main">
+        
+    </div>
+
+    <div class="index" id="index">
+        <button id="previous" onclick="previousIndex()"><i class="fa-solid fa-arrow-left fa-2x"></i></button>
+        <button id="next" onclick="nextIndex()"><i class="fa-solid fa-arrow-right fa-2x"></i></button>
+    </div>
+
+    <div class="footer">
+        <ul>
+            <li><a href="#navbg" ><p>Back to top</p></a></li>
+            <li><a href="#"><p>More Info</p></a></li>
+        </ul>
+        
+    </div>
+
+    <div class="padding"></div>
+
+    
+</body>
+</html>
